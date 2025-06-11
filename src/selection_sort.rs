@@ -1,5 +1,3 @@
-
-
 fn selection_sort(mut arr: Vec<i32>) -> Vec<i32> {
     let mut sorted: Vec<i32> = Vec::with_capacity(arr.len());
 
@@ -20,7 +18,7 @@ fn smallest_value(arr: &[i32]) -> usize {
             smallest.0 = i;
         }
     }
-    
+
     smallest.0
 }
 
@@ -38,7 +36,7 @@ mod tests {
 
     #[test]
     fn sorts_random() {
-        let arr = vec![3,5,2,3,1,7];
+        let arr = vec![3, 5, 2, 3, 1, 7];
         let result = selection_sort(arr);
 
         assert_eq!(result, vec![1, 2, 3, 3, 5, 7])
@@ -51,7 +49,7 @@ mod tests {
 
         assert_eq!(result, vec![])
     }
-    
+
     #[test]
     fn sorts_negative() {
         let arr = vec![4, 3, 2, 1, -1, -100];

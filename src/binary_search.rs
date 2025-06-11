@@ -7,13 +7,13 @@ pub fn binary_search(haystack: Vec<i32>, needle: i32) -> i32 {
     while low <= high {
         let mid: i32 = (low + high) / 2;
         let guess = haystack[mid as usize];
-        
+
         match needle.cmp(&guess) {
             Ordering::Equal => return mid,
             Ordering::Greater => low = mid + 1,
-            Ordering::Less => high = mid - 1
+            Ordering::Less => high = mid - 1,
         };
-    };
+    }
     -1
 }
 
@@ -45,8 +45,8 @@ mod tests {
 
         let result = binary_search(haystack, needle);
         assert_eq!(result, 2);
-    }    
-    
+    }
+
     #[test]
     fn null_value() {
         let haystack = vec![1, 2, 3, 4, 5];
@@ -54,5 +54,5 @@ mod tests {
 
         let result = binary_search(haystack, needle);
         assert_eq!(result, -1);
-    }    
+    }
 }
