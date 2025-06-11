@@ -1,6 +1,7 @@
 use std::cmp::Ordering;
 
-pub fn binary_search(haystack: Vec<i32>, needle: i32) -> i32 {
+#[allow(dead_code)]
+fn binary_search(haystack: Vec<i32>, needle: i32) -> i32 {
     let mut low: i32 = 0;
     let mut high = (haystack.len() - 1) as i32;
 

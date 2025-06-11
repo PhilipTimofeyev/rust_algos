@@ -2,28 +2,25 @@ use std::cmp::Ordering;
 
 #[allow(dead_code)]
 fn factorial(n: i32) -> i32 {
-    if n == 0 { 1 }
-    else { n * factorial(n-1) }
+    if n == 0 { 1 } else { n * factorial(n - 1) }
 }
 
 #[allow(dead_code)]
 fn count_list(arr: &[i32]) -> i32 {
-    if arr.is_empty() { 0 }
-    else {
+    if arr.is_empty() {
+        0
+    } else {
         1 + count_list(&arr[1..])
-    } 
+    }
 }
 
 #[allow(dead_code)]
 fn max(arr: &[i32]) -> i32 {
     if arr.len() == 2 {
-        if arr[0] > arr[1] {arr[0]}
-        else {arr[1]}
-    } else { 
+        if arr[0] > arr[1] { arr[0] } else { arr[1] }
+    } else {
         let sub_max = max(&arr[1..]);
-        if arr[0] > sub_max {
-            arr[0]
-        } else { sub_max }
+        if arr[0] > sub_max { arr[0] } else { sub_max }
     }
 }
 
@@ -37,8 +34,8 @@ fn binary_search(haystack: &[i32], needle: i32) -> usize {
     match guess.cmp(&needle) {
         Ordering::Equal => mid,
         Ordering::Greater => binary_search(&haystack[low..mid - 1], needle),
-        Ordering::Less => binary_search(&haystack[mid + 1..high], needle)
-    } 
+        Ordering::Less => binary_search(&haystack[mid + 1..high], needle),
+    }
 }
 
 #[cfg(test)]
@@ -49,7 +46,7 @@ mod tests {
         let result = factorial(5);
         assert_eq!(result, 120)
     }
-    
+
     #[test]
     fn count_works() {
         let result = count_list(&[1, 2, 3, 4]);
@@ -68,4 +65,3 @@ mod tests {
         assert_eq!(result, 3)
     }
 }
-

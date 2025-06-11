@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 fn selection_sort(mut arr: Vec<i32>) -> Vec<i32> {
     let mut sorted: Vec<i32> = Vec::with_capacity(arr.len());
 
@@ -9,6 +10,7 @@ fn selection_sort(mut arr: Vec<i32>) -> Vec<i32> {
     sorted
 }
 
+#[allow(dead_code)]
 fn smallest_value(arr: &[i32]) -> usize {
     let mut smallest = (0, &arr[0]);
 
